@@ -15,6 +15,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fA5-lo-oAm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="0.0039215686269999999" green="0.36078431370000003" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="6eA-c6-UqB" kind="relationship" relationship="rootViewController" id="Tbm-Wn-OP5"/>
@@ -24,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-321" y="140"/>
         </scene>
-        <!--Root View Controller-->
+        <!--culturetrip-->
         <scene sceneID="vyE-7D-VVl">
             <objects>
                 <viewController id="6eA-c6-UqB" customClass="RootViewController" customModule="culturetrip" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,8 +38,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-E0-UAA">
-                                <rect key="frame" x="184" y="460" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="119.5" y="453" width="175" height="44"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.36078431370000003" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Let's get started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="startTapped" destination="6eA-c6-UqB" eventType="touchUpInside" id="S1h-kh-dY6"/>
                                     <segue destination="hCZ-kk-WW0" kind="show" id="qFj-kj-xQL"/>
@@ -48,7 +59,12 @@
                             <constraint firstItem="bPe-E0-UAA" firstAttribute="centerY" secondItem="mXa-eh-dvV" secondAttribute="centerY" id="kcg-iA-aEM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0MD-Mf-zSf"/>
+                    <navigationItem key="navigationItem" title="culturetrip" id="0MD-Mf-zSf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="V73-5I-asT"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="startButton" destination="bPe-E0-UAA" id="FaH-eS-CdQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vC2-KU-MoA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

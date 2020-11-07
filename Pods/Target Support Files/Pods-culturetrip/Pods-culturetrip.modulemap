@@ -1,0 +1,6 @@
+framework module Pods_culturetrip {
+  umbrella header "Pods-culturetrip-umbrella.h"
+
+  export *
+  module * { export * }
+}

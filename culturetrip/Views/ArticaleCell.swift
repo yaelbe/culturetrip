@@ -35,6 +35,11 @@ class ArticaleCell:UICollectionViewCell {
     
     // MARK: proprieties
     static let identifier: String = "ArticaleCell"
+    lazy var width: NSLayoutConstraint = {
+        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
+        width.isActive = true
+        return width
+    }()
     
     static var nib: UINib {
            return UINib(nibName: identifier, bundle: Bundle(for: self))
@@ -53,6 +58,12 @@ class ArticaleCell:UICollectionViewCell {
         self.topImage.image = nil
         self.likeImage.image = nil
         self.saveImage.image = nil
+    }
+    
+    //Here is the magic
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        width.constant = bounds.size.width
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
     }
     
     func onDataSet(_ article: Article?) {
